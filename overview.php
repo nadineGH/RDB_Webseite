@@ -25,14 +25,14 @@
 <?php
 	//Für jedes Produkt wird eine Zeile erstellt
 	//Die ganze Datenbank wird durchlaufen
-	foreach($sql->query('SELECT lebensmittel.produktname, lebensmittel.kategorie, lebensmittel.ablaufdatum, Beschaffungsort.laden, lebensmittel.menge, 
-	lebensmittel.einheit, lebensmittel.anzahl FROM lebensmittel, Beschaffungsort WHERE lebensmittel.beschaffungsort = Beschaffungsort.beschaffungsort') as $row) 
+	foreach($sql->query('SELECT produktname, kategorie, ablaufdatum, beschaffungsort, menge, 
+	einheit, anzahl FROM lebensmittel') as $row) 
 	{
 		echo "<tr>";
 		echo "<td>". $row['produktname'] . "</td>";
 		echo "<td>". $row['kategorie'] . "</td>";
 		echo "<td>". $row['ablaufdatum'] . "</td>";
-		echo "<td>". $row['laden'] . "</td>";
+		echo "<td>". $row['beschaffungsort'] . "</td>";
 		echo "<td>". $row['menge'] .'<br>'. "</td>";
 		echo "<td>". $row['einheit'] . "</td>";
 		echo "<td>". $row['anzahl'] . "</td>";

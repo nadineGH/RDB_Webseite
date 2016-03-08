@@ -42,8 +42,8 @@ echo "<form action='{$_SERVER['PHP_SELF']}' method='post'>";
 		echo "<h2>Suchergebnis:</h2>";
 		//Vergleich von dem eingegebenen Produktnamen mit den Einträgen der Datenbank
 		$sqll = 'SELECT *				
-			FROM lebensmittel, Beschaffungsort
-			WHERE lebensmittel.produktname LIKE \'%'.$_POST['produktname'].'%\' AND lebensmittel.beschaffungsort = Beschaffungsort.beschaffungsort ORDER BY produktname ASC';
+			FROM lebensmittel
+			WHERE produktname LIKE \'%'.$_POST['produktname'].'%\' ORDER BY produktname ASC';
 	
 	
 		$erg = $sql ->query($sqll);
@@ -57,7 +57,7 @@ echo "<form action='{$_SERVER['PHP_SELF']}' method='post'>";
 				<td><?php echo $row['produktname']; ?></td>
 				<td><?php echo $row['kategorie']; ?></td>
 				<td><?php echo $row['ablaufdatum']; ?></td>
-				<td><?php echo $row['laden']; ?></td>
+				<td><?php echo $row['beschaffungsort']; ?></td>
 				<td><?php echo $row['menge']; ?></td>
 				<td><?php echo $row['einheit']; ?></td>
 				<td><?php echo $row['anzahl']; ?></td>

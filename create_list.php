@@ -30,7 +30,7 @@
 ?>
 <div>
 	<h2>Schritt 1</h2>
-	<h3>Du hats folgendes Produkt erstellt:</h3>
+	<h3>Du hast folgendes Produkt erstellt:</h3>
 	<?=html_table_from_array($lebensmittel)?>
 	
 </div>

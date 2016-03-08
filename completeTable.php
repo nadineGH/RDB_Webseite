@@ -22,7 +22,7 @@
     <tbody>
     	<?php
 			//Datenbankeinträge abrufen
-    		$result = $sql->prepare("SELECT * FROM lebensmittel, Beschaffungsort WHERE lebensmittel.beschaffungsort = Beschaffungsort.beschaffungsort ORDER BY id ASC");
+    		$result = $sql->prepare("SELECT * FROM lebensmittel ORDER BY id ASC");
     		$result->execute();
     		for($i=0; $row = $result->fetch(); $i++){
     	?>
@@ -30,7 +30,7 @@
     		<td><?php echo $row['produktname']; ?></td>
     		<td><?php echo $row['kategorie']; ?></td>
 			<td><?php echo $row['ablaufdatum']; ?></td>
-			<td><?php echo $row['laden']; ?></td>
+			<td><?php echo $row['beschaffungsort']; ?></td>
 			<td><?php echo $row['menge']; ?></td>
 			<td><?php echo $row['einheit']; ?></td>
 			<td><?php echo $row['anzahl']; ?></td>
